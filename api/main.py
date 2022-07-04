@@ -30,9 +30,9 @@ def age():
     month = date[5:7]
     day = date[8:10]
 
-    formated_date = day + '/' + month + '/' + year
+    formatted_date = day + '/' + month + '/' + year
     
-    quote = 'Olá, {}! Você tem {} anos e em {} você terá {} anos.'.format(name, ageNow, formated_date, ageThen)
+    quote = 'Olá, {}! Você tem {} anos e em {} você terá {} anos.'.format(name, ageNow, formatted_date, ageThen)
 
     data = {
             "quote": quote, 
@@ -42,6 +42,9 @@ def age():
     
     return jsonify(data)
 
+@app.route("/album-info", methods=["GET"])
+def album_info():
+    pass
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port="5000")

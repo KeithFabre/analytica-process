@@ -1,7 +1,7 @@
 from datetime import date
 
 today = date.today()
-def ageCalc(birthday=None, date=today):   
+def ageCalc(birthday, date=today):   
     
      # to extract from str
     str_birth = str(birthday)
