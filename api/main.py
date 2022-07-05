@@ -44,7 +44,9 @@ def age():
 
 @app.route("/album-info", methods=["GET"])
 def album_info():
-    pass
+    
+    artist = str(request.args.get('artist'))
+
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port="5000")
