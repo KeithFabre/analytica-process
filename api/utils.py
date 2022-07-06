@@ -129,27 +129,3 @@ def getAlbumTracks(album_latest):
     return album_tracks, album_id
 
 
-artist_name = "imagine dragons"
-
-# artist id
-art_id  = getArtistInfo(artist_name)[0]
-artist_name = getArtistInfo(artist_name)[1]
-
-# year of latest albums
-album_year = getArtistLatestAlbum(art_id)[0] 
-
-# album id and name from year of latest release
-album_latest = getArtistLatestAlbum(art_id)[1] 
-
-# tracks from lastest album
-album_tracks = getAlbumTracks(album_latest)[0]
-# album id of latest album with described tracks
-album_id = getAlbumTracks(album_latest)[1]
-# album name of latest album with described tracks
-album_name = [a['name'] for a in album_latest if a['id'] == album_id][0]
-
-print(artist_name) 
-print(album_name)
-print(album_year)
-print(album_tracks)
-
