@@ -10,7 +10,7 @@ def ageCalc(birthday, date=today):
     str_birth = str(birthday)
     str_date = str(date)
 
-    # slicing to get fraction and turing to int to calc
+    # slicing to get fraction and turning to int to calc
     y = int(str_birth[0:4])
     m = int(str_birth[5:7])
     d = int(str_birth[8:10])

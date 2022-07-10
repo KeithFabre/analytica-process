@@ -1,5 +1,6 @@
-from flask import Flask, request, jsonify
-from utils import ageCalc, getArtistInfo, getArtistLatestAlbum, getAlbumTracks
+from flask    import Flask, request, jsonify
+from utils    import ageCalc, getArtistInfo, getArtistLatestAlbum, getAlbumTracks
+from datetime import date
 
 app = Flask(__name__)
 app.config['JSON_SORT_KEYS'] = False # prevents jsonify from sorting
@@ -8,6 +9,7 @@ app.config['JSON_SORT_KEYS'] = False # prevents jsonify from sorting
 def age():
     
     request_data = request.get_json(force=True)
+    today = str(date.today())
 
     name = None
     birthdate = None
@@ -22,6 +24,8 @@ def age():
 
         if "date" in request_data:
             date = request_data["date"]
+            if str(date) == str(today):
+                return 'Forneça uma data futura'
     
     ageNow = ageCalc(birthdate)
     ageThen = ageCalc(birthdate, date)
