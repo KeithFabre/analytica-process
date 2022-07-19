@@ -3,7 +3,7 @@
 
 #### API
 
-The API consists in two routes: one for determining the age of a person in a certain day and anothr to fetch information about an artist's latest album.
+The API consists in two routes: one for determining the age of a person in a certain day and another to fetch information about an artist's latest album.
 
 #### Data Analysis
 
